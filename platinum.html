@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+
+    <style>
+        .filter{ 
+    background: rgb(252, 248, 239);
+
+   }
+   .banner {
+  position: relative;
+  width: 100%;
+}
+
+.banner img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Overlay Text */
+.overlay {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 80%;
+}
+
+/* Heading */
+.overlay h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph */
+.overlay p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Input + Button */
+.search-box {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 200px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.product-img{
+ width: 100%;
+ height: 300px;
+
+
+}
+
+.product-card{
+   overflow: hidden;
+      border-radius: 10px;
+}
+ .product-card img {
+      width: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.1); /* Zoom In */
+    }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header Styling */
+        .brand-name {
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #faf8f8;
+            text-decoration: none;
+        }
+
+        .search-container .form-control {
+            border-radius: 0 5px 5px 0;
+            background-color: #f5f5f5;
+            border: none;
+        }
+
+        .search-container .input-group-text {
+            border-radius: 5px 0 0 5px;
+            background-color: #f5f5f5;
+            border: none;
+        }
+
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: #c6a355;
+        }
+
+        /* Offcanvas (Sidebar) Styling */
+        .offcanvas {
+            background-color: #000;
+            color: #fff;
+            width: 320px !important;
+        }
+
+        .offcanvas-header {
+            border-bottom: 1px solid #333;
+            padding: 1.5rem;
+        }
+
+        .category-section {
+            background-color: #f9f9f9;
+            color: #000;
+        }
+
+        .category-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+        }
+
+        .offcanvas-footer {
+            padding: 20px;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="sticky-top bg-dark shadow-sm">
+        <div class="container-fluid px-lg-5 py-3">
+            <div class="row align-items-center">
+
+                <div class="col-lg-2 col-6 d-flex align-items-center">
+                    <button class="btn d-lg-none me-2 p-0 border-0  text-light" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasMenu">
+                        <i class="bi bi-list fs-1"></i>
+                    </button>
+                    <a href="#" class="brand-name h3 mb-0">ORRA</a>
+                </div>
+
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div class="input-group search-container px-5">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search for Diamond rings">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6 d-flex justify-content-end align-items-center gap-3 text-light">
+                    <div class="d-none d-lg-flex align-items-center gap-1 me-3">
+                        <i class="bi bi-geo-alt"></i>
+                        <small>Find a Store</small>
+                    </div>
+                    <a href="#" class="text-light"><i class="bi bi-person fs-4"></i></a>
+                    <a href="#" class="text-light d-none d-md-block"><i class="bi bi-heart fs-4"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-bag fs-4"></i></a>
+                </div>
+            </div>
+    </header>
+
+    <!-- header end -->
+    <div class="container">
+        <div class="row d-none d-lg-block text-light">
+            <div class="col-12">
+                <ul class="nav justify-content-center border-top pt-2">
+                    <li class="nav-item"><a class="nav-link" href="diamond.html">Diamond <i
+                                class="bi bi-chevron-down small"></i></a>
+                                
+
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="platinum.html">Platinum <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="rings.html">Rings <i class="bi bi-chevron-down small"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="earrings.html">Earrings <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="necklace sets.html">Necklace Sets <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="everyday essentials.html">Everyday Essentials <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header d-flex flex-column align-items-start text-white">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <span class="h4 mb-0 fw-bold">ORRA</span>
+                <button type="button" class="btn-close btn-close-dark bg-light" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="mt-4">
+                <a href="#" class="text-white text-decoration-none me-3">Login</a>
+                <span class="text-secondary">|</span>
+                <a href="#" class="text-white text-decoration-none ms-3">Signup</a>
+            </div>
+        </div>
+
+        <div class="offcanvas-body p-0">
+            <div class="category-section">
+                <div class="category-item">Diamond <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Platinum <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Rings <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Earrings <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Necklace Sets <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item border-0">Everyday Essentials <i class="bi bi-chevron-right"></i></div>
+            </div>
+
+            <div class="offcanvas-footer">
+                <a href="#" class="footer-link">My Orders</a>
+                <a href="#" class="footer-link">FAQs</a>
+                <div class="mt-5">
+                    <i class="bi bi-telephone"></i> <span class="ms-2">1800-2661888</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- kkkkkkk -->
+   
+  <div class="container mt-4">
+    <a class="navbar-brand" href="index.html">Home < Platinum </a>
+        <h4 class="fw-bold">Platinum</h4>
+        <div class="row">
+
+          <!-- 🔹 Sidebar Filters -->
+          <div class="col-md-3 filter ">
+            <div class="sidebar">
+              <h5 class="fw-bold">Filters</h5>
+
+              <p><b>Jewellery Type</b></p>
+              <div><input type="checkbox"> Solitaire Jewellery (80)</div>
+              <div><input type="checkbox"> Diamond Jewellery</div>
+              <div><input type="checkbox"> Platinum Jewellery</div>
+
+              <hr>
+
+              <p><b>Product Type</b></p>
+              <div><input type="checkbox"> Bangle</div>
+              <div><input type="checkbox"> Bracelet</div>
+              <div><input type="checkbox"> Chain</div>
+              <div><input type="checkbox"> Earrings</div>
+              <div><input type="checkbox"> Jewellery set</div>
+              <div><input type="checkbox"> Neckwear set</div>
+
+              <hr>
+
+              <p><b>Price</b></p>
+              <div><input type="checkbox"> Below ₹20000</div>
+              <div><input type="checkbox"> ₹20000 - ₹50000</div>
+              <div><input type="checkbox"> ₹50000 - ₹75000</div>
+              <div><input type="checkbox"> ₹75000 - ₹100000</div>
+              <div><input type="checkbox"> ₹100000 - ₹200000</div>
+              <div><input type="checkbox"> ₹300000 - ₹400000</div>
+              <div><input type="checkbox"> ₹400000 - ₹500000</div>
+
+              <hr>
+
+              <p><b>Metal Purity</b></p>
+              <div><input type="checkbox"> 14KT(1339)</div>
+              <div><input type="checkbox"> 18KT(1772)</div>
+              <div><input type="checkbox"> 950PT(124)</div>
+              <div><input type="checkbox"> 9KT(137)</div>
+
+              <hr>
+            </div>
+
+
+          </div>
+
+          <!-- 🔹 Product Section -->
+          <div class="col-md-9">
+            <div class="row g-4">
+
+              <!-- Card 1 -->
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 1.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹1,50,326</div>
+                  <div class="title">Solid Men's Platinum Chain</div> 
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 2.jpg" class="product-img class=100">
+                  <div class="price fw-bold mt-3">₹30,227</div>
+                  <div class="title">Infinity Design Platinum and Rose Gold Finger Ring</div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 3.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹59,198</div>
+                  <div class="title">Dazzling Platinum Diamond Ring</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 4.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹1,75,587</div>
+                  <div class="title">Together Always Platinum Couple Bands</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 5.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹93,741</div>
+                  <div class="title">Lustrous Platinum Men's Band</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 6.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹1,43,460</div>
+                  <div class="title">Chic Texture Bangle For Women</div>
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <img src="diamond banner images.jpg" alt="" class="w-100">
+
+              </div>
+
+
+
+
+
+
+
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 7.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹1,47,607</div>
+                  <div class="title">Lustrous Platinum Couple Bands</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 8.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹30,344</div>
+                  <div class="title">Artistic Infinity Ring</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 9.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹38,017</div>
+                  <div class="title">Gorgeous Chain in Platinum</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 10.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹90,048</div>
+                  <div class="title">Textured Platinum Men's Ring</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 11.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹1,09,006</div>
+                  <div class="title">Men's Diamond and Platinum Ring</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="product-card">
+                  <img src="p 12.jpg" class="product-img">
+                  <div class="price fw-bold mt-3">₹91,216</div>
+                  <div class="title">Stylish Platinum Ring</div>
+                </div>
+              </div>
+
+              <!-- ,,,,,, -->
+
+              <div class="banner mb-3">
+                <img src="orra-Store-Experience_1_1 2.jpg" alt="banner">
+
+                <div class="overlay">
+                  <h2>Reimagine Luxury at Our Stores</h2>
+                  <p>
+                    Experience the elegance firsthand. Try your favourite jewellery with expert
+                    personalized guidance at your nearest store.
+                  </p>
+
+                  <div class="search-box">
+                    <input type="text" placeholder="Pincode">
+                    <button>Check</button>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+  </div>
+  </div>
+
+
+
+
+
+  <!-- kkkkkk -->
+
+ 
+
+
+
+  <div class="container-fluid bg-dark  d-block align-items-center">
+
+    <div class="row gap-4 ms-5    p-5 pt-5">
+
+
+      <div class="col-lg-2 text-light  mt-3">
+        <h4>Get to Know</h4>
+        <h6>About Us</h6>
+        <h6>Press</h6>
+        <h6>Contact Us</h6>
+        <h6>Corporate Governance</h6>
+
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Customer Service</h4>
+        <h6>7 Days Return Policy</h6>
+        <h6>Lifetime Exchange & Buyback</h6>
+        <h6>Privacy Policy</h6>
+        <h6>Terms & Conditions</h6>
+        <h6>FAQ's</h6>
+        <h6>Find Store</h6>
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Know your Jewellery</h4>
+        <h6>Diamond Guide</h6>
+        <h6>Platinum Guide</h6>
+
+
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Contact Us</h4>
+        <h6><i class="bi bi-telephone"></i>   1800-2661888 </h6>
+        <h6> <i class="bi bi-envelope-fill"></i>  General/Corporate - enquiries@orra.co.in</h6>
+        <h6> <i class="bi bi-envelope-fill"></i>  Grievance - customercare@orra.co.in
+
+        </h6>
+
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Registered Office</h4>
+        <p>House of ORRA,Aver House Building,
+          Plot B26, Off. New Link Road, Opp. Citi Mall, Andheri West, Mumbai - 400053
+          CIN: U36911MH1991PTC061736 Follow Us On</p>
+
+      </div>
+
+    </div>
+
+
+    <div class=" text-light ms-5">
+      <h4 class="m-2">Follow Us On</h4>
+    </div>
+    <div class="d-flex text-light ms-5 icon">
+      <i class="fa-brands fa-instagram m-2"></i>
+      <i class="fa-brands fa-whatsapp m-2"></i>
+      <i class="fa-brands fa-x-twitter m-2"></i>
+      <i class="fa-brands fa-facebook-f m-2"></i>
+      <i class="fa-brands fa-youtube m-2"></i>
+      <i class="fa-brands fa-linkedin-in m-2"></i>
+
+    </div>
+
+    <div class="text-center text-light">
+      <p>©2025 ORRA. All Rights Reserved </p>
+      <div class="d-flex justify-content-center">
+        <h6 class="m-1">Privacy Policy</h6>
+         <span class="text-secondary">|</span>
+        <h6 class="m-1">Terms & Conditions</h6>
+         <span class="text-secondary">|</span>
+        <h6 class="m-1">Terms of Use</h6>
+         <span class="text-secondary">|</span>
+        <h6 class="m-1">Disclaimer</h6>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  
+
+
+
+
+</body>
+
+</html>
