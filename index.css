@@ -1,0 +1,92 @@
+.search {
+  width: 600px;
+
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* Mega Menu Full Width */
+
+
+
+.color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.yellow {
+  background: gold;
+}
+
+.rose {
+  background: pink;
+}
+
+.white {
+  background: #ddd;
+}
+
+
+.mega-menu1 {
+  width: 800px;
+  left: 5;
+  right: 5;
+  border-radius: 0;
+
+}
+
+
+.mega-menu {
+  width: 600px;
+  padding: 20px;
+}
+
+.mega-menu h6 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.mega-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mega-menu ul li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.div {
+  height: 600px;
+}
+
+.contain {
+  background: rgb(253, 238, 222);
+}
+
+.icon {
+  height: auto;
+}
+
+
+
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.product-img:hover {
+  transform: scale(1.05);
+}

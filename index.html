@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header Styling */
+        .brand-name {
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #faf8f8;
+            text-decoration: none;
+        }
+
+        .search-container .form-control {
+            border-radius: 0 5px 5px 0;
+            background-color: #f5f5f5;
+            border: none;
+        }
+
+        .search-container .input-group-text {
+            border-radius: 5px 0 0 5px;
+            background-color: #f5f5f5;
+            border: none;
+        }
+
+
+        .product-card{
+   overflow: hidden;
+      border-radius: 10px;
+}
+ .product-card img {
+      width: 100%;
+      transition: transform 0.5s ease;
+    }
+  .product-card:hover img {
+      transform: scale(1.1); /* Zoom In */
+    }
+
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover {
+            color: #c6a355;
+        }
+
+        /* Offcanvas (Sidebar) Styling */
+        .offcanvas {
+            background-color: #000;
+            color: #fff;
+            width: 320px !important;
+        }
+
+        .offcanvas-header {
+            border-bottom: 1px solid #333;
+            padding: 1.5rem;
+        }
+
+        .category-section {
+            background-color: #f9f9f9;
+            color: #000;
+        }
+
+        .category-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+        }
+
+        .offcanvas-footer {
+            padding: 20px;
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <header class="sticky-top bg-dark shadow-sm">
+        <div class="container-fluid px-lg-5 py-3">
+            <div class="row align-items-center">
+
+                <div class="col-lg-2 col-6 d-flex align-items-center">
+                    <button class="btn d-lg-none me-2 p-0 border-0  text-light" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasMenu">
+                        <i class="bi bi-list fs-1"></i>
+                    </button>
+                    <a href="#" class="brand-name h3 mb-0">ORRA</a>
+                </div>
+
+                <div class="col-lg-7 d-none d-lg-block">
+                    <div class="input-group search-container px-5">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Search for Diamond rings">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6 d-flex justify-content-end align-items-center gap-3 text-light">
+                    <div class="d-none d-lg-flex align-items-center gap-1 me-3">
+                        <i class="bi bi-geo-alt"></i>
+                        <small>Find a Store</small>
+                    </div>
+                    <a href="login.html" class="text-light"><i class="bi bi-person fs-4"></i></a>
+                    <a href="#" class="text-light d-none d-md-block"><i class="bi bi-heart fs-4"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-bag fs-4"></i></a>
+                </div>
+            </div>
+    </header>
+
+    <!-- header end -->
+    <div class="container">
+        <div class="row d-none d-lg-block text-light">
+            <div class="col-12">
+                <ul class="nav justify-content-center border-top pt-2">
+                    <li class="nav-item"><a class="nav-link" href="diamond.html">Diamond <i
+                                class="bi bi-chevron-down small"></i></a>
+                                
+
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="platinum.html">Platinum <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="rings.html">Rings <i class="bi bi-chevron-down small"></i></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="earrings.html">Earrings <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="necklace sets.html">Necklace Sets <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="everyday essentials.html">Everyday Essentials <i
+                                class="bi bi-chevron-down small"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header d-flex flex-column align-items-start text-white">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <span class="h4 mb-0 fw-bold">ORRA</span>
+                <button type="button" class="btn-close btn-close-dark bg-light" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="mt-4">
+                <a href="#" class="text-white text-decoration-none me-3">Login</a>
+                <span class="text-secondary">|</span>
+                <a href="#" class="text-white text-decoration-none ms-3">Signup</a>
+            </div>
+        </div>
+
+        <div class="offcanvas-body p-0">
+            <div class="category-section">
+                <div class="category-item">Diamond <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Platinum <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Rings <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Earrings <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item">Necklace Sets <i class="bi bi-chevron-right"></i></div>
+                <div class="category-item border-0">Everyday Essentials <i class="bi bi-chevron-right"></i></div>
+            </div>
+
+            <div class="offcanvas-footer">
+                <a href="#" class="footer-link">My Orders</a>
+                <a href="#" class="footer-link">FAQs</a>
+                <div class="mt-5">
+                    <i class="bi bi-telephone"></i> <span class="ms-2">1800-2661888</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- kkkkkkk -->
+
+
+
+  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="banner images 2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="banner images 1.jpg" class="d-block w-100" alt="...">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </div>
+  <!-- ..... -->
+
+  <div class="container-fluid  text-center mt-5 mb-5">
+    <div class="row m-3">
+      <div class="col-lg-6">
+        <img src="first div.jpg" alt="" class="w-100 rounded-4 div">
+
+      </div>
+
+      <div class="col-lg-6">
+        <img src="second div.jpg" alt="" class="w-100 rounded-4 div">
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <!-- ...... -->
+
+  <h4 class="text-center mb-5"><i class="fa-brands fa-pied-piper-hat"></i> Shop By Category <i
+      class="fa-brands fa-pied-piper-hat"></i></h4>
+
+
+
+  <!-- .... -->
+
+  <div class="container-fluid mt-5">
+    <div class="row">
+
+      <!-- Product 1 -->
+      <div class="col-md-2">
+        <div class="card product-card">
+          <img src="1 images.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Daily Wear</h6>
+
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-2">
+        <div class="card product-card">
+          <img src="rings.2.2.26.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Rings</h6>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-2">
+        <div class="card product-card">
+          <img src="Earrings_1.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Earrings</h6>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card product-card">
+          <img src="pendant.29.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Pendants</h6>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card product-card">
+          <img src="pendant_set__3.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Pendant set</h6>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card product-card">
+          <img src="category.bracelate.9.126.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Braclets</h6>
+        </div>
+      </div>
+      <div class="col-md-2  mt-3">
+        <div class="card product-card">
+          <img src="bangles__3.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Bangles</h6>
+        </div>
+      </div>
+      <div class="col-md-2 mt-3">
+        <div class="card product-card">
+          <img src="category.necklace.9.126.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Necklace</h6>
+        </div>
+      </div>
+      <div class="col-md-2  mt-3">
+        <div class="card product-card">
+          <img src="necklace_set__3 (1).jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Necklaces set</h6>
+        </div>
+      </div>
+      <div class="col-md-2  mt-3">
+        <div class="card product-card">
+          <img src="category.mangalsutra.9.126.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Mangalsutra</h6>
+        </div>
+      </div>
+      <div class="col-md-2  mt-3">
+        <div class="card product-card">
+          <img src="plantinum-chain2522026.jpeg" class="product-img w-100">
+
+          <h6 class="text-center m-4">Chains</h6>
+
+        </div>
+      </div>
+      <div class="col-md-2  mt-3">
+        <div class="card product-card">
+          <img src="category.platinum.9.126.jpg" class="product-img w-100">
+
+          <h6 class="text-center m-4">For Men</h6>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Side Banner -->
+   <div class="text-center mt-5 mb-3">
+      <h4 class="fw-bold"><i class="fa-brands fa-pied-piper-hat"></i> Best Sellers <i class="fa-brands fa-pied-piper-hat"></i></h4>
+      
+    </div>
+    
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">  
+                <img src="s image 1.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹89,682</h6>
+                <p>Gorgeous Multi Wearable Diamond Earrings
+                  Sparkling Gold Desired Necklace</p>
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 2.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹1,46,154</h6>
+                <p>Sparkling Gold Desired Necklace
+                  Leaves Design Diamond Tanmaniya</p>
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 3.jpg" alt="" class="w-100 rounded-3">
+                <h6> ₹2,29,868</h6>
+                <p>Leaves Design Diamond Tanmaniya
+                  14KT Rose Gold Astra Necklace and Earring Set</p>
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 4.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹2,78,197</h6>
+                <p>14KT Rose Gold Astra Necklace and Earring Set
+                  Aurora Rose Gold Diamond Stud Earrings</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="swiper-slide">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="s image 5.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹73,788</h6>
+                <p>Aurora Rose Gold Diamond Stud Earrings
+                  Elegant Diamond Nakshatra Studs</p>
+
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 6.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹50,965</h6>
+                <p>Elegant Diamond Nakshatra Studs
+                  Stunning Diamond and 18KT Rose Gold Tanmaniya with Chain</p>
+
+              </div>
+
+              <div class="col-md-3">
+                <img src="s images 7.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹82,337</h6>
+                <p>Stunning Diamond and 18KT Rose Gold Tanmaniya with Chain
+                  Dazzling Diamond Finger Ring</p>
+
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 8.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹55,201</h6>
+                <p>Dazzling Diamond Finger Ring
+                  Classy Geometric Design Diamond Drop Earrings</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="swiper-slide">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="s image 9.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹57,011</h6>
+                <p>Classy Geometric Design Diamond Drop Earrings
+                  Delicate Drop Design Diamond Danglers</p>
+
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 10.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹44,453</h6>
+                <p>Delicate Drop Design Diamond Danglers
+                  Simple Drop Design Diamond Earrings</p>
+
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 11.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹57,865</h6>
+                <p>Simple Drop Design Diamond Earrings
+                  Stylish Prong Design Diamond Bracelet</p>
+
+              </div>
+
+              <div class="col-md-3">
+                <img src="s image 12.jpg" alt="" class="w-100 rounded-3">
+                <h6>₹96,922</h6>
+                <p>Stylish Prong Design Diamond Bracelet
+                  Goemetric Design Subtle Diamond Finger Ring</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+<!-- kkkkkk -->
+
+<div class="text-center mt-5 mb-3">
+      <h4 class="fw-bold"><i class="fa-brands fa-pied-piper-hat"></i> ORRA Collections <i class="fa-brands fa-pied-piper-hat"></i></h4>
+      <p>Explore our newly launched collection</p>
+    </div>
+
+<div class="container-fluid">
+  <div class="row">
+     <div class="col-md-6 mt-2">
+        <div class="card product-card">
+          <img src="1_Collection_Banner.jpg" class="product-img w-100">
+        </div>
+      </div>
+     <div class="col-md-6 mt-2">
+        <div class="card product-card">
+          <img src="2_Collection_Banner.jpg" class="product-img w-100">
+        </div>
+      </div>
+     <div class="col-md-6 mt-2">
+        <div class="card product-card">
+          <img src="1020_x_650_Crown_Star.jpg" class="product-img w-100">
+        </div>
+      </div>
+     <div class="col-md-6 mt-2">
+        <div class="card product-card">
+          <img src="1020_x_650_Desired.jpg" class="product-img w-100">
+        </div>
+      </div>
+
+    
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- kkkk -->
+
+    <div class="text-center mt-5 mb-5">
+      <h4> <i class="fa-brands fa-pied-piper-hat"></i> About ORRA <i class="fa-brands fa-pied-piper-hat"></i></h4>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <img src="about orra.jpg" alt="" class=" w-100 rounded-4">
+
+        </div>
+        <div class="col-md-12 mt-3">
+          <h6 class="fw-bold">ORRA – SINCE 1888</h6>
+          <p class="text-secondary">ORRA is one of India's finest jewellery retail chains, in business since 1888 and
+            are spread across India with 95 stores in 40 cities. Consistently at the forefront of design leadership and
+            product innovation, our 5 globally renowned design centres across the country are constantly producing
+            diamond and gold jewellery that is cutting-edge, in keeping with the times and aligned to modern
+            sensibilities.</p>
+
+        </div>
+        <div class="col-md-12 mt-3">
+          <h6 class="fw-bold">EXCLUSIVE ONLINE JEWELLERY STORE</h6>
+          <p class="text-secondary">At ORRA, adhering to the highest standards of quality and authenticity is what we
+            live by. Our jewellery is infused with energy, artistry and contemporary elegance in keeping with the
+            changing times, with competitive pricing to match. What you purchase from us is an exclusive range found
+            nowhere else, jewellery for modern sensibilities and eclectic tastes.</p>
+
+        </div>
+        <div class="col-md-12 mt-3">
+          <h6 class="fw-bold">SHOP ONLINE WITH EASE</h6>
+          <p class="text-secondary">Buy from our range of ORRA jewellery, from traditional indigenous designer earrings,
+            to contemporary classic necklaces, modern chains and bangles, to minimal bracelets and pendant sets. We make
+            your shopping easier and reduce the confusion with filters for jewellery on the basis of diamonds, gold
+            color, number of stones, weight and karat of gold, carat of diamond, and so much more. Shop online at
+            www.orra.co.in, your one-stop jewellery destination for formal, informal soirees and special occasions.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="container-fluid bg-dark  d-block align-items-center">
+
+    <div class="row gap-4 ms-5    p-5 pt-5">
+
+
+      <div class="col-lg-2 text-light  mt-3">
+        <h4>Get to Know</h4>
+        <h6>About Us</h6>
+        <h6>Press</h6>
+        <h6>Contact Us</h6>
+        <h6>Corporate Governance</h6>
+
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Customer Service</h4>
+        <h6>7 Days Return Policy</h6>
+        <h6>Lifetime Exchange & Buyback</h6>
+        <h6>Privacy Policy</h6>
+        <h6>Terms & Conditions</h6>
+        <h6>FAQ's</h6>
+        <h6>Find Store</h6>
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Know your Jewellery</h4>
+        <h6>Diamond Guide</h6>
+        <h6>Platinum Guide</h6>
+
+
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Contact Us</h4>
+        <h6><i class="bi bi-telephone"></i>   1800-2661888 </h6>
+        <h6> <i class="bi bi-envelope-fill"></i>  General/Corporate - enquiries@orra.co.in</h6>
+        <h6> <i class="bi bi-envelope-fill"></i>  Grievance - customercare@orra.co.in
+
+        </h6>
+
+      </div>
+      <div class="col-lg-2 text-light mt-3">
+        <h4>Registered Office</h4>
+        <p>House of ORRA,Aver House Building,
+          Plot B26, Off. New Link Road, Opp. Citi Mall, Andheri West, Mumbai - 400053
+          CIN: U36911MH1991PTC061736 Follow Us On</p>
+
+      </div>
+
+    </div>
+
+
+    <div class=" text-light ms-5">
+      <h4 class="m-2">Follow Us On</h4>
+    </div>
+    <div class="d-flex text-light ms-5 icon">
+      <i class="fa-brands fa-instagram m-2"></i>
+      <i class="fa-brands fa-whatsapp m-2"></i>
+      <i class="fa-brands fa-x-twitter m-2"></i>
+      <i class="fa-brands fa-facebook-f m-2"></i>
+      <i class="fa-brands fa-youtube m-2"></i>
+      <i class="fa-brands fa-linkedin-in m-2"></i>
+
+    </div>
+
+    <div class="text-center text-light">
+      <p>©2025 ORRA. All Rights Reserved </p>
+      <div class="d-flex justify-content-center">
+        <h6 class="m-2 ">Privacy Policy</h6>
+        <hr>
+        <h6 class="m-2">Terms & Conditions</h6>
+        <hr>
+        <h6 class="m-2">Terms of Use</h6>
+        <hr>
+        <h6 class="m-2">Disclaimer</h6>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+
+
+  
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+
+
+
+</body>
+
+</html>
